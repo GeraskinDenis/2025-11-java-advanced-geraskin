@@ -11,7 +11,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <artifactId>business-app</artifactId>
+    <artifactId>business-app-2</artifactId>
 
     <properties>
         <spring-shell.version>3.4.1</spring-shell.version>

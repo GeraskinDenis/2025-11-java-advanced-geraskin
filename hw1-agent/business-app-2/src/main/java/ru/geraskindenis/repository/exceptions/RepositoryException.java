@@ -1,4 +1,4 @@
-package ru.geraskindenis.repositories.exceptions;
+package ru.geraskindenis.repository.exceptions;
 
 public class RepositoryException extends RuntimeException {
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classes>
+    <class name="MessagingServiceImpl" package="ru.geraskindenis.services" duration="20000">
+        <methods>
+            <method>getMsg</method>
+            <method>sendMsg</method>
+        </methods>
+    </class>
+    <class name="PersonService" package="ru.geraskindenis.services" duration="20000">
+        <methods>
+            <method>getPersonById</method>
+            <method>save</method>
+        </methods>
+    </class>
+</classes>

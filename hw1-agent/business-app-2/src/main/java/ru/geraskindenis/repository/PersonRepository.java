@@ -1,4 +1,4 @@
-package ru.geraskindenis.repositories;
+package ru.geraskindenis.repository;
 
 import ru.geraskindenis.models.Person;
 

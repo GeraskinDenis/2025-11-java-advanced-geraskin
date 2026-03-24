@@ -1,8 +1,8 @@
-package ru.geraskindenis.repositories;
+package ru.geraskindenis.repository;
 
 import org.springframework.stereotype.Repository;
 import ru.geraskindenis.models.Person;
-import ru.geraskindenis.repositories.exceptions.RepositoryException;
+import ru.geraskindenis.repository.exceptions.RepositoryException;
 
 import java.util.*;
 

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.geraskindenis.dto.PersonDto;
 import ru.geraskindenis.models.Person;
-import ru.geraskindenis.repositories.PersonRepository;
+import ru.geraskindenis.repository.PersonRepository;
 
 import java.util.List;
 import java.util.Objects;
