@@ -1,0 +1,7 @@
+FROM eclipse-temurin:17.0.18_8-jdk-jammy
+RUN groupadd -r helloworld && useradd -r -g helloworld helloworld
+RUN mkdir /app && chown helloworld:helloworld /app
+COPY --chown=appuser:appgroup target/hw15-helloworld-In-docker-1.0-SNAPSHOT.jar /app/helloworld.jar
+USER helloworld
+WORKDIR /app
+ENTRYPOINT ["java", "-XX:+UseContainerSupport", "-XX:MaxRAMPercentage=75.0", "-jar", "helloworld.jar"]
