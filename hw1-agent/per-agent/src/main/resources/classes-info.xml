@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classes>
+    <class name="PersonServiceImpl" package="ru.geraskindenis.services" duration="20000">
+        <methods>
+            <method>getAll</method>
+            <method>findById</method>
+            <method>save</method>
+        </methods>
+    </class>
+    <class name="PersonRepositoryImpl" package="ru.geraskindenis.repository" duration="20000">
+        <methods>
+            <method>getAll</method>
+        </methods>
+    </class>
+</classes>
