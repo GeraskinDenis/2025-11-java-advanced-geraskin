@@ -64,7 +64,7 @@ java -Xmx256m -jar target/hw2-file-cache-1.0-SNAPSHOT.jar
 Программа попытается найти указанный файл в кэше. Так как файла в кэше нет, программа загрузит файл в кэш и выведет
 его содержимое в терминал.
 
-Далее можно прочитать остальные файлы: `file2.txt`, `file3.txt`, `file4.txt`. 
+Далее можно прочитать остальные файлы: `file2.txt`, `file3.txt`, `file4.txt`.
 
 ## Memory Analysis
 
@@ -72,13 +72,13 @@ java -Xmx256m -jar target/hw2-file-cache-1.0-SNAPSHOT.jar
 
 ### SoftReference
 Запускаем программу с реализацией кэша `SpftReference`.
-![](screens/soft-reference.png)
+![soft-reference](screens/soft-reference.png)
 На графиках видно постепенное заполнение области `Old Gen` во время загрузки файлов в кэш.
 При простое приложения или очередноё загрузке файла, GC удаляет объекты `WeakReference` - это не позволяет
 приложению словить ошибку `OutOfMemoryError`.
 На графике видно как GC позволяет почти полностью заполнить область памяти.
 
-__WeakReference__
+### WeakReference
 Запускаем программу с реализацией кэша `WeakReference`.
 ![weak-reference](screens/weak-reference.png)
 На графиках видно постепенное заполнение области `Old Gen` во время загрузки файлов в кэш.
