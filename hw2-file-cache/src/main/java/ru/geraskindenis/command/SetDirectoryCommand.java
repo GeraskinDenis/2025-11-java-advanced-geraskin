@@ -29,7 +29,6 @@ public class SetDirectoryCommand implements Command {
 
         console.print("Enter the path to the file storage directory: ");
         String pathStr = console.readLine();
-        ;
         Path dir = Paths.get(pathStr);
         if (fileSystem.isDirectory(dir)) {
             currentDirectory.set(dir);

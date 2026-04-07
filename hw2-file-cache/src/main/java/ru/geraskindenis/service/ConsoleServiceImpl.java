@@ -1,6 +1,5 @@
 package ru.geraskindenis.service;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.Scanner;
