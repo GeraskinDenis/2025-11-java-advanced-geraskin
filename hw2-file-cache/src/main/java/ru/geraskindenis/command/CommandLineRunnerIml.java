@@ -1,7 +1,8 @@
-package ru.geraskindenis.cache;
+package ru.geraskindenis.command;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import ru.geraskindenis.command.*;
+import ru.geraskindenis.cache.FileCache;
 import ru.geraskindenis.service.CacheService;
 import ru.geraskindenis.service.CacheServiceImpl;
 import ru.geraskindenis.service.ConsoleService;
@@ -14,7 +15,7 @@ import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 
 @Component
-public class Emulator {
+public class CommandLineRunnerIml implements CommandLineRunner {
 
     private final ConsoleService console;
     private final CacheService cacheService;
@@ -23,11 +24,18 @@ public class Emulator {
     private final AtomicReference<Path> currentDirectory = new AtomicReference<>();
     private boolean running = true;
 
-    public Emulator(ConsoleService console, CacheService cacheService, FileSystemService fileSystem) {
+    public CommandLineRunnerIml(ConsoleService console, CacheService cacheService, FileSystemService fileSystem) {
         this.console = console;
         this.cacheService = cacheService;
         this.fileSystem = fileSystem;
         initCommands();
+    }
+
+    @Override
+    public void run(String... args) {
+        console.print("=== File cache with SoftReference/WeakReference ===");
+        chooseCacheType();
+        mainLoop();
     }
 
     private void initCommands() {
@@ -40,12 +48,6 @@ public class Emulator {
 
     private void addCommand(Command cmd) {
         commands.put(cmd.getKeyword(), cmd);
-    }
-
-    public void start() {
-        console.print("=== File cache with SoftReference/WeakReference ===");
-        chooseCacheType();
-        mainLoop();
     }
 
     private void chooseCacheType() {
